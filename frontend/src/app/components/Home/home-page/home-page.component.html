@@ -1,0 +1,46 @@
+<br><br>
+<h1>welcome to giuson</h1>
+
+<h3>Here is the full list of candidates
+    To filter, select the appropriate column</h3>
+<br><br>
+
+
+<p class="language">
+    <mat-form-field appearance="fill">
+        <mat-label>Select a language:</mat-label>
+        <select matNativeControl [(ngModel)]="language" name="languageId" #languageIdBox="ngModel">
+            <option *ngFor="let language of languages" [value]="language.languagesId">{{language.languageName}}</option>
+        </select>
+    </mat-form-field>
+</p>
+
+<p class="seniority">
+    <mat-form-field appearance="fill">
+        <mat-label>Select a seniority :</mat-label>
+        <select matNativeControl [(ngModel)]="language" name="languageId" #languageIdBox="ngModel">
+            <option>Senior</option>
+            <option>Junior</option>
+        </select>
+    </mat-form-field>
+</p>
+
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>begin Year</th>
+        <th>languages</th>
+        <th>last Update Date</th>
+        <th>seniority</th>
+
+    </tr>
+    <tr *ngFor="let candidate of candidates">
+        <td>{{candidate.name}}</td>
+        <td>{{candidate.beginYear }}</td>
+        <td>{{candidate.languageName}}</td>
+        <td>{{candidate.lastUpdateDate|date: 'dd/MM/yyyy'}}</td>
+        <td *ngIf="candidate.beginYear">Senior</td>
+        <td *ngIf="!candidate.beginYear">Junior</td>
+    </tr>
+</table>

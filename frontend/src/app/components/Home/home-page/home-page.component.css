@@ -1,0 +1,28 @@
+h2{
+
+    font-size: 50px;
+    color: aquamarine;
+}
+
+
+table {
+    margin:auto;
+    padding: 50px;
+    /* border: solid 1px black; */
+}
+th{
+    color: crimson;
+    padding: 3px;
+}
+td,tr {
+    color: cornflowerblue;
+    padding: 5px;
+}
+
+#language{
+    float: left;
+}
+
+#seniority{
+    float: left;
+}
